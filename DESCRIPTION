@@ -1,0 +1,11 @@
+Package: UKpopData
+Type: Package
+Title: Get population data in a tibble
+Version: 0.0.0.9000
+Authors@R: 
+    person("Mark", "Nicholls", email = "mark.nicholls@dvsa.gov.uk", role = c("aut", "cre"))
+Description: Get the population data in a tibble
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
