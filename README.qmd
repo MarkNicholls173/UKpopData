@@ -1,0 +1,74 @@
+---
+title: "Popluation Data"
+author: "Mark Nicholls"
+date: 04/08/2022
+---
+
+# About
+
+Trying to gather population data by age and year historical and projections to use in regression models for driving test demand forecasts
+
+# Data
+
+## Obtaining Historical data
+
+It appears to be a static spreadsheet which changes name every time is it updated
+
+Current release date: 25 June 2021  
+
+Next Release due: September 2022
+
+- Start website: [www.ons.gov.uk](https://www.ons.gov.uk) 
+- Main menu: People, population and community Dropdown option: Population and migration
+- In this section option: Population estimates Scroll down to: Datasets related to population estimates
+- Select: Estimates of the population for the UK, England and Wales, Scotland and Northern Ireland
+- Expand section: Mid-2001 to mid-2020 detailed time series edition of this dataset
+- Supporting files you may find useful: UK population estimates, 1838 to 2020 (XLSX, 2.0 MB)
+
+Direct link to current file: [UK population estimates, 1838 to 2020 (XLSX, 2.0 MB)](https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid2001tomid2020detailedtimeseries/ukpopulationestimates18382020.xlsx)
+
+## Obtaining Projected Data
+
+From a tool from the ONS to download customised data
+
+- Start website: [www.nomisweb.co.uk](https://www.nomisweb.co.uk)
+- Data Downloads section: Query Data
+- Select Datasets by source: Population Estimates/Projections
+- Opened folder: National Population projections by single age of year
+
+
+Make the following selections:
+
+- Geography: Great Britain
+- Ages: un-check all "Labour Market categories" and check only 3rd box in quick select section for Individual ages and 5 year age bands section, thereby selecting only ages 
+- Select Years: Future years on from Historic data (2021 upwards to 2027, in this case )
+- Select gender: Total, Males and Females
+- Format selection: Microsoft Excel (.xlsx)
+- Layout: projected year
+- Other options: One table per worksheet checked
+
+Wait,  then download data
+
+Due to the nature of the web-application there is no static link to the current file
+
+## Historical Data structure
+
+The downloaded file has many tabs
+
+The required table is called "Population estimates for UK, by sex and single year of age, mid-1971 to mid-2020" and is currently Table 3 (also tab "Table 3")
+
+There are 3 tables, arranged vertically in this order: All Persons, Male then Female. All 3 tables have column per year, starting with the most recent, and one row per age, starting with 0 years, ages 90+ are aggregated into one row.
+
+
+## Projected Data Structure
+
+The downloaded file will have 3 tabs, each tab has one table.
+
+The tabs are named appropriately: Total, Male and Female
+
+All 3 tables have one column per year, starting with the oldest, and one row per age, starting with 0 up to the maximum age, without any aggregation for 90+
+
+
+
+
+

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.288">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Mark Nicholls">
+<meta name="dcterms.date" content="2022-04-08">
+
+<title>Popluation Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link id="quarto-text-highlighting-styles" href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<style>
+.quarto-title-banner {
+  
+}
+</style>
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Popluation Data</h1>
+</div>
+
+
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Mark Nicholls </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">04/08/2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="about" class="level1">
+<h1>About</h1>
+<p>Trying to gather population data by age and year historical and projections to use in regression models for driving test demand forecasts</p>
+</section>
+<section id="data" class="level1">
+<h1>Data</h1>
+<section id="obtaining-historical-data" class="level2">
+<h2 class="anchored" data-anchor-id="obtaining-historical-data">Obtaining Historical data</h2>
+<p>It appears to be a static spreadsheet which changes name every time is it updated</p>
+<p>Current release date: 25 June 2021</p>
+<p>Next Release due: September 2022</p>
+<ul>
+<li>Start website: <a href="https://www.ons.gov.uk">www.ons.gov.uk</a></li>
+<li>Main menu: People, population and community Dropdown option: Population and migration</li>
+<li>In this section option: Population estimates Scroll down to: Datasets related to population estimates</li>
+<li>Select: Estimates of the population for the UK, England and Wales, Scotland and Northern Ireland</li>
+<li>Expand section: Mid-2001 to mid-2020 detailed time series edition of this dataset</li>
+<li>Supporting files you may find useful: UK population estimates, 1838 to 2020 (XLSX, 2.0 MB)</li>
+</ul>
+<p>Direct link to current file: <a href="https://www.ons.gov.uk/file?uri=/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland/mid2001tomid2020detailedtimeseries/ukpopulationestimates18382020.xlsx">UK population estimates, 1838 to 2020 (XLSX, 2.0 MB)</a></p>
+</section>
+<section id="obtaining-projected-data" class="level2">
+<h2 class="anchored" data-anchor-id="obtaining-projected-data">Obtaining Projected Data</h2>
+<p>From a tool from the ONS to download customised data</p>
+<ul>
+<li>Start website: <a href="https://www.nomisweb.co.uk">www.nomisweb.co.uk</a></li>
+<li>Data Downloads section: Query Data</li>
+<li>Select Datasets by source: Population Estimates/Projections</li>
+<li>Opened folder: National Population projections by single age of year</li>
+</ul>
+<p>Make the following selections:</p>
+<ul>
+<li>Geography: Great Britain</li>
+<li>Ages: un-check all “Labour Market categories” and check only 3rd box in quick select section for Individual ages and 5 year age bands section, thereby selecting only ages</li>
+<li>Select Years: Future years on from Historic data (2021 upwards to 2027, in this case )</li>
+<li>Select gender: Total, Males and Females</li>
+<li>Format selection: Microsoft Excel (.xlsx)</li>
+<li>Layout: projected year</li>
+<li>Other options: One table per worksheet checked</li>
+</ul>
+<p>Wait, then download data</p>
+<p>Due to the nature of the web-application there is no static link to the current file</p>
+</section>
+<section id="historical-data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="historical-data-structure">Historical Data structure</h2>
+<p>The downloaded file has many tabs</p>
+<p>The required table is called “Population estimates for UK, by sex and single year of age, mid-1971 to mid-2020” and is currently Table 3 (also tab “Table 3”)</p>
+<p>There are 3 tables, arranged vertically in this order: All Persons, Male then Female. All 3 tables have column per year, starting with the most recent, and one row per age, starting with 0 years, ages 90+ are aggregated into one row.</p>
+</section>
+<section id="projected-data-structure" class="level2">
+<h2 class="anchored" data-anchor-id="projected-data-structure">Projected Data Structure</h2>
+<p>The downloaded file will have 3 tabs, each tab has one table.</p>
+<p>The tabs are named appropriately: Total, Male and Female</p>
+<p>All 3 tables have one column per year, starting with the oldest, and one row per age, starting with 0 up to the maximum age, without any aggregation for 90+</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
