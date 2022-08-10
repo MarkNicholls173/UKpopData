@@ -5,7 +5,15 @@ Version: 0.0.0.9000
 Authors@R: 
     person("Mark", "Nicholls", email = "mark.nicholls@dvsa.gov.uk", role = c("aut", "cre"))
 Description: Get the population data in a tibble
+    one row per year and one column per gender / age combo
+    e.g. Total_Age_17, Male_Age_21, Female_Age_30
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    dplyr,
+    magrittr,
+    readxl,
+    stringr,
+    tidyr
