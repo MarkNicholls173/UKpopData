@@ -105,7 +105,6 @@ get_pop_data <- function() {
 #' @param tbl tibble: must have Age and table_name columns
 #'
 #' @return tibble: the transposed table
-#' @export
 #'
 transpose_pop <- function(tbl) {
     # set up local variables to avoid check() warnings
