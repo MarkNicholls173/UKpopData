@@ -25,7 +25,7 @@ library(readxl)
 
 ```{r load historic data}
 historic_pop_raw <- 
-    read_xlsx("../data/ukpopulationestimates18382020.xlsx", 
+    read_xlsx("../inst/extdata/ukpopulationestimates18382020.xlsx", 
               sheet = "Table 3",
               skip = 4,
               col_names = TRUE)
@@ -34,19 +34,19 @@ historic_pop_raw <-
 
 ```{r load projected data}
 proj_pop_total_raw <- 
-    read_xlsx("../data/nomis_2022_08_04_115225.xlsx", 
+    read_xlsx("../inst/extdata/nomis_2022_08_04_115225.xlsx", 
               sheet = "Total",
               skip = 6,
               col_names = TRUE)
 
 proj_pop_male_raw <- 
-    read_xlsx("../data/nomis_2022_08_04_115225.xlsx", 
+    read_xlsx("../inst/extdata/nomis_2022_08_04_115225.xlsx", 
               sheet = "Male",
               skip = 6,
               col_names = TRUE)
 
 proj_pop_female_raw <- 
-    read_xlsx("../data/nomis_2022_08_04_115225.xlsx", 
+    read_xlsx("../inst/extdata/nomis_2022_08_04_115225.xlsx", 
               sheet = "Female",
               skip = 6,
               col_names = TRUE)
