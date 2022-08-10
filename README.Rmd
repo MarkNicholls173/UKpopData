@@ -1,14 +1,44 @@
 ---
-title: "Popluation Data"
-author: "Mark Nicholls"
-date: 04/08/2022
+output: github_document
 ---
 
-# About
+<!-- README.md is generated from README.Rmd. Please edit that file -->
 
-Trying to gather population data by age and year historical and projections to use in regression models for driving test demand forecasts
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
-# Data
+# UKpopData
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## About
+
+Trying to gather population data by age and year historical and projections to use in regression models for driving test demand forecasts.
+
+
+## Installation
+
+Not yet on guthub, ask Mark for the package file
+
+
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(UKpopData)
+get_pop_data()
+```
+
+
 
 ## Obtaining Historical data
 
@@ -67,8 +97,3 @@ The downloaded file will have 3 tabs, each tab has one table.
 The tabs are named appropriately: Total, Male and Female
 
 All 3 tables have one column per year, starting with the oldest, and one row per age, starting with 0 up to the maximum age, without any aggregation for 90+
-
-
-
-
-
