@@ -1,3 +1,83 @@
+#' Get Uk population data
+#'
+#' @return
+#' @export
+#'
+#' @examples
+get_pop_data <- function() {
+    historic_pop_raw <- 
+        read_xlsx("../inst/extdata/ukpopulationestimates18382020.xlsx", 
+                  sheet = "Table 3",
+                  skip = 4,
+                  col_names = TRUE)
+    
+    proj_pop_total_raw <- 
+        read_xlsx("../inst/extdata/nomis_2022_08_04_115225.xlsx", 
+                  sheet = "Total",
+                  skip = 6,
+                  col_names = TRUE)
+    
+    proj_pop_male_raw <- 
+        read_xlsx("../inst/extdata/nomis_2022_08_04_115225.xlsx", 
+                  sheet = "Male",
+                  skip = 6,
+                  col_names = TRUE)
+    
+    proj_pop_female_raw <- 
+        read_xlsx("../inst/extdata/nomis_2022_08_04_115225.xlsx", 
+                  sheet = "Female",
+                  skip = 6,
+                  col_names = TRUE)
+    
+    historic_pop_clean <- 
+        historic_pop_raw %>%
+        # drop years columns that are not needed
+        # keep 20 years (21 cols)
+        select(1:21) %>%
+        drop_na() %>%
+        # remove annual total
+        filter(!Age == "All Ages") %>%
+        # add column to identify each table using repeated Age (1 for each table)
+        group_by(Age) %>%
+        mutate(table_number = row_number(Age)) %>%
+        relocate(table_number) %>%
+        mutate(
+            table_name = case_when(
+                table_number == 1 ~ "Total",
+                table_number == 2 ~ "Male",
+                table_number == 3 ~ "Female",
+                TRUE ~ "Unknown"
+            )
+        ) %>%
+        relocate(table_name) %>%
+        select(-table_number) %>%
+        ungroup()
+    
+    proj_pop_clean <- 
+        bind_rows(
+            proj_pop_total_raw %>%
+                mutate(table_name = "Total"),
+            proj_pop_male_raw %>%
+                mutate(table_name = "Male"),
+            proj_pop_female_raw %>%
+                mutate(table_name = "Female")
+        ) %>%
+        # change Age to be same as historic, have underscore not space
+        mutate(
+            Age = str_replace(Age, " ", "_"),
+            Age = str_remove(Age, "d")
+        )
+    
+    bind_rows(
+        historic_pop_clean,
+        proj_pop_clean
+    ) %>%
+        arrange(Year)
+    
+}
+
+
+
 #' Transpose population table from Age in Rows and Year in Columns
 #' to Year in rows and Age in columns
 #'
