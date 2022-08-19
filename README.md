@@ -14,7 +14,9 @@ forecasts.
 
 ## Installation
 
-Not yet on guthub, ask Mark for the package file
+to install from GitHub
+
+`devtools::install_github("https://github.com/MarkNichollsDVSA/UKpopData")`
 
 ## Example
 
@@ -44,6 +46,11 @@ get_pop_data()
 #> #   Total_Age_19 <dbl>, Total_Age_20 <dbl>, Total_Age_21 <dbl>,
 #> #   Total_Age_22 <dbl>, Total_Age_23 <dbl>, Total_Age_24 <dbl>, ...
 ```
+
+## Updating the data
+
+Download the files as listed below and copy them into the
+`/inst/extdata/` folder
 
 ## Obtaining Historical data
 

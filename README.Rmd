@@ -25,7 +25,11 @@ Trying to gather population data by age and year historical and projections to u
 
 ## Installation
 
-Not yet on guthub, ask Mark for the package file
+to install from GitHub
+
+`devtools::install_github("https://github.com/MarkNichollsDVSA/UKpopData")`
+
+
 
 
 
@@ -38,6 +42,11 @@ library(UKpopData)
 get_pop_data()
 ```
 
+
+
+## Updating the data
+
+Download the files as listed below and copy them into the `/inst/extdata/` folder
 
 
 ## Obtaining Historical data
